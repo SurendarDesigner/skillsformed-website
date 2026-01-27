@@ -7,7 +7,7 @@ export default {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  register(/* { strapi }: { strapi: Core.Strapi } */) { },
 
   /**
    * An asynchronous bootstrap function that runs before
@@ -16,5 +16,9 @@ export default {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
+  bootstrap({ strapi }) {
+    console.log('--------------------------------------------------');
+    console.log('DEBUG: Loaded Transfer Config:', JSON.stringify(strapi.config.get('admin.transfer'), null, 2));
+    console.log('--------------------------------------------------');
+  },
 };
