@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_navigation_navbars",
+  "info": {
+    "displayName": "Navbar",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "Navlogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Navdropdown": {
+      "type": "component",
+      "component": "navigation.navdropdown",
+      "repeatable": true
+    },
+    "Navitems": {
+      "type": "component",
+      "component": "navigation.navlink",
+      "repeatable": true
+    },
+    "Secondarybutton": {
+      "type": "component",
+      "component": "navigation.navbutton",
+      "repeatable": false
+    },
+    "Navbutton": {
+      "type": "component",
+      "component": "navigation.navbutton",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

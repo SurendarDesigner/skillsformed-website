@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_navigation_navdropdowns",
+  "info": {
+    "displayName": "Navdropdown"
+  },
+  "options": {},
+  "attributes": {
+    "Navtitle": {
+      "type": "string"
+    },
+    "Navitems": {
+      "type": "component",
+      "component": "navigation.navlink",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_trusted_trustedsections",
+  "info": {
+    "displayName": "Trustedsection"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Trustlist": {
+      "type": "component",
+      "component": "trusted.trustlist",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

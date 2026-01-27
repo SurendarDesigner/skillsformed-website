@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_navigation_navbuttons",
+  "info": {
+    "displayName": "Navbutton"
+  },
+  "options": {},
+  "attributes": {
+    "Buttonname": {
+      "type": "string"
+    },
+    "Buttonurl": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "textlink"
+      ]
+    }
+  },
+  "config": {}
+}

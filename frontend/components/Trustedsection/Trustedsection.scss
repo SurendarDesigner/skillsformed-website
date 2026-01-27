@@ -1,0 +1,87 @@
+@use '../../styles/token.scss' as *;
+
+.trusted-section {
+    padding: 64px 24px;
+
+    .trusted-container {
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trusted-title {
+        font-size: var(--font-size-3xl);
+        max-width: 520px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .trust-list {
+        width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        padding: 40px 0 0 0;
+        margin: 0;
+    }
+
+    .trust-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        max-width: 280px;
+
+        .trust-icon-wrapper {
+            // Maintain size constraint on icon
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .trust-image {
+            max-height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .trust-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trust-item-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .trust-item-desc {
+            font-size: var(--font-size-base);
+            color: var(--color-text-slate);
+            margin: 0;
+        }
+    }
+}
+
+// Mobile: Vertical Stack
+@media (max-width: 768px) {
+    .trusted-section {
+        padding: 48px 24px;
+
+        .trust-list {
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .trust-item {
+            .trust-image {
+                max-height: 64px; // Slightly larger on mobile if needed, or keep same
+            }
+        }
+    }
+}

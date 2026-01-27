@@ -1,0 +1,168 @@
+:root {
+    /* Brand Colors */
+    --color-primary: #1C528B;
+    --color-primary-dark: #14406A;
+    --color-secondary-blue: #5c8dc5;
+
+    /* Accents */
+    --color-teal: #5ba8a8;
+    --color-yellow: #eec61d;
+    --color-orange: #EFBC84;
+    --color-purple: #A95AC3;
+
+    /* Neutrals */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-gray-50: #fbfbfb;
+    --color-gray-100: #f6f9fc;
+    --color-gray-200: #eaeaea;
+    --color-gray-300: #e6e6e6;
+    /* Gray bg */
+    --color-gray-400: #d4d4d4;
+    --color-gray-500: #888888;
+    --color-gray-600: #777777;
+    /* Text Light */
+    --color-gray-700: #666666;
+    /* Text Sub */
+    --color-gray-800: #555555;
+    /* Text Medium */
+    --color-gray-900: #333333;
+    /* Text Dark */
+    --color-text-main: #222222;
+    --color-text-slate: #4D5154;
+    --color-text-secondary-blue: #67819C;
+
+    /* Specialized Backgrounds */
+    --color-bg-stories: #f5f8fc;
+    --color-bg-bento-blue: #EFF7FE;
+    --color-bg-bento-green: #E4F8F8;
+    --color-bg-bento-orange: #FFF3E3;
+    --color-bg-bento-purple: #EEF0FF;
+
+    --color-bg-light-btn-blue: #D5E6F4;
+    --color-bg-light-btn-green: #CCE6E6;
+    --color-bg-light-btn-orange: #F7DFBF;
+    --color-bg-light-btn-purple: #D6DAF5;
+
+    /* Gradients */
+    --gradient-light-blue-start: #E0F2F7;
+    --gradient-light-blue-end: #F0F8FF;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+    --shadow-soft: 0 48px 100px -20px rgba(50, 50, 93, 0.25), 0 32px 48px -30px rgba(0, 0, 0, 0.3);
+    --shadow-nav: 0 4px 4px rgba(0, 0, 0, 0.02);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.05);
+
+    /* Spacing / Layout */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 96px;
+    --spacing-5xl: 128px;
+
+    /* Border Radius */
+    --border-radius-xs: 4px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+    --border-radius-2xl: 32px;
+    --border-radius-3xl: 48px;
+    --border-radius-circle: 50%;
+
+    /* About Page Grid Colors */
+    --color-grid-c1: #4CC9D6;
+    --color-grid-c2: #8C7CBE;
+    --color-grid-c3: #C1E9D8;
+    --color-grid-c4: #D3E8F8;
+    --color-grid-c5: #FFD1D1;
+    --color-grid-c6: #E8F4C6;
+    --color-grid-c7: #E6D0F5;
+
+    /* Learning Pyramid colors */
+    --stage4: #008F8F;
+    --stage3: #003E6F;
+    --stage2: #008F8F;
+    --stage1: #015AA3;
+
+    /* Video Section */
+    --color-bg-video-section: #1A3C6A;
+    --color-video-text-highlight: #91CCFF;
+    --color-video-text-sub: #8A9FBC;
+
+    /* Bento Card Specific Text */
+    --color-card-text-1: #4A78A0;
+    --color-card-text-2: #367777;
+    --color-card-text-3: #916C3B;
+    --color-card-text-4: #4B5076;
+
+    /* Course Tag */
+    --color-tag-bg: #37C2C5;
+
+    /* Search & Navbar specifics */
+    --color-search-border: #2263B5;
+
+    /* Success Stories */
+    --color-bg-stories-light: #F0F5F9;
+    --color-bg-stories-blue: #D6E6F2;
+    --color-text-stories-dark: #42526B;
+
+    /* Career / Course / Terms Specifics */
+    --color-blue-bright: #0056b3;
+    --color-blue-bright-dark: #004494;
+    --color-teal-bright: #20c997;
+    --color-danger: #dc3545;
+
+    --color-bg-light-gray: #f4f7f6;
+    --color-bg-very-light: #fafafa;
+    --color-bg-light-2: #f9fbfd;
+    --color-bg-light-blue-hover: #f0f7ff;
+    --color-bg-light-blue-active: #e6f0ff;
+
+    --color-border-light: #e0e0e0;
+    --color-border-input: #dce0e4;
+
+    --color-text-darker-gray: #444;
+    --color-disabled: #ccc;
+
+    /* Footer */
+    --color-dark-blue-footer: #143567;
+
+    /* Cleanup / Misc */
+    --color-overlay-black: #00000089;
+    --color-gray-medium: #999;
+    --color-bg-blue-gray-light: #e1eaf1;
+
+    /* Modal overlay */
+    --modal-bg: rgba(0, 0, 0, 0.8);
+
+    /* Typography */
+    --font-primary: 'Lexend', sans-serif;
+
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-base: 1rem;
+    /* 16px */
+    --font-size-md: 1.125rem;
+    /* 18px */
+    --font-size-lg: 1.25rem;
+    /* 20px */
+    --font-size-xl: 1.5rem;
+    /* 24px */
+    --font-size-2xl: 1.75rem;
+    /* 28px */
+    --font-size-3xl: 2rem;
+    /* 32px */
+    --font-size-4xl: 3rem;
+    /* 48px */
+}

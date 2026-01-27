@@ -1,0 +1,375 @@
+@import '../../styles/token';
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    /* Adding a fallback background or gradient */
+    background: linear-gradient(135deg, #E0F2F7 0%, #F0F8FF 100%);
+    border-radius: 48px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* --- Carousel Slides --- */
+.carousel-slides {
+    position: relative;
+    height: 100%;
+    /* Updated based on user edit */
+    min-height: 520px;
+    /* Restored min-height baseline */
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 5;
+    transition: opacity 0.5s ease-in-out, z-index 0.01s linear 0.5s;
+    padding: 0 24px;
+    box-sizing: border-box;
+
+    /* Desktop Background Settings */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Background image handling via inline styles in React, 
+   but keeping base class for potential usage */
+.slide-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+
+/* --- MOBILE IMAGE TAG (Hidden on Desktop) --- */
+.mobile-image {
+    display: none;
+}
+
+/* Slide Content */
+.slide-content {
+    width: 50%;
+    max-width: 580px;
+    padding-left: 48px;
+    z-index: 10;
+}
+
+.slide-headline {
+    font-size: var(--font-size-3xl);
+    /* 4xl approx */
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.slide-description {
+    font-size: var(--font-size-lg);
+    font-weight: 300;
+    color: #67819C;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.slide-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 184px;
+    padding: 16px 24px;
+    font-size: 1rem;
+    background-color: #1C528B;
+    color: #FFF;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.slide-button:hover {
+    background-color: #14406A;
+}
+
+/* --- Carousel Dots (Bottom Navigation) --- */
+.carousel-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 24px;
+    z-index: 20;
+}
+
+.dot-button {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    margin: 0 4px;
+    padding: 0;
+}
+
+.dot-button.active {
+    background-color: #1C528B;
+    opacity: 1;
+    width: 32px;
+    border-radius: 4px;
+}
+
+/* --- Arrow Navigation --- */
+.arrow-group {
+    /* Desktop: layout container behaves as passthrough or static */
+    display: static;
+    margin-top: 0;
+}
+
+.carousel-arrow {
+    display: flex;
+    /* Visible by default */
+    align-items: center;
+    justify-content: center;
+    /* Desktop: Absolute Positioning Restored */
+    position: absolute;
+    top: 50%;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #1C528B;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 30;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Default state: visible & scaled */
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+
+    /* Desktop Behavior: Hidden when disabled */
+    &:disabled {
+        transform: translateY(-50%) scale(0);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        width: 0;
+        margin: 0;
+    }
+}
+
+.carousel-arrow:hover {
+    background-color: #fff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific Positions for Desktop */
+.arrow-prev {
+    left: 24px;
+    right: auto;
+}
+
+.arrow-next {
+    right: 24px;
+    left: auto;
+}
+
+/* --- RESPONSIVE / MOBILE DESIGN --- */
+
+@media (max-width: 992px) {
+    .carousel-container {
+        padding: 0;
+        width: 100%;
+        border-radius: 0;
+        background: none;
+        margin-top: 0;
+    }
+
+    /* Mobile: Restore Inline Flow but positioned over image */
+    .arrow-group {
+        display: flex;
+        justify-content: space-between;
+        /* Spread across image */
+        gap: 0;
+        margin-top: 0;
+
+        position: absolute;
+        top: 22.5vh;
+        /* Center of 45vh image */
+        transform: translateY(-50%);
+        width: 100%;
+        left: 0;
+        padding: 0 16px;
+        z-index: 40;
+        /* Above image */
+    }
+
+    .carousel-arrow {
+        position: static;
+        /* Remove absolute positioning */
+        transform: none;
+        /* Remove desktop translate */
+        width: 36px;
+        height: 36px;
+
+        /* Mobile Behavior: Visible but disabled */
+        &:disabled {
+            display: flex;
+            visibility: visible;
+            transform: scale(1);
+            /* Reset scale so it stays visible */
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+            width: 36px;
+            /* Reset width */
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .carousel-slides {
+        height: 100%;
+        min-height: 85vh;
+        /* Tall container for mobile */
+    }
+
+    .carousel-slide {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+
+        /* REMOVE BACKGROUND IMAGE ON MOBILE */
+        background-image: none !important;
+        background: #fff;
+
+        /* Flex setup for top image / bottom content */
+        justify-content: flex-start;
+
+        position: relative;
+        /* Static/Relative for flow */
+        z-index: auto;
+        display: none;
+    }
+
+    .carousel-slide.active {
+        display: flex;
+    }
+
+    .slide-background {
+        display: none;
+        /* Hide desktop bg div if used */
+    }
+
+    /* DISPLAY MOBILE IMAGE TAG */
+    .mobile-image {
+        display: block;
+        width: 100%;
+        height: 45vh;
+        /* Image takes top portion */
+        object-fit: cover;
+        /* Crop image nicely */
+        border-radius: 0;
+        /* Removing radius as requested */
+        background: linear-gradient(135deg, #E0F2F7 0%, #F0F8FF 100%);
+    }
+
+    .slide-content {
+        max-width: 640px;
+        width: 100%;
+        padding: 24px 24px 48px 24px;
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slide-headline {
+        font-size: var(--font-size-3xl);
+        margin: 0 auto 16px auto;
+    }
+
+    .slide-description {
+        font-size: var(--font-size-xl);
+        margin-bottom: 24px;
+    }
+
+    .dot-button {
+        background-color: #ddd;
+    }
+
+    .dot-button.active {
+        background-color: #1C528B;
+    }
+
+    .carousel-dots {
+        /* Reset bottom */
+        bottom: auto;
+        /* Position relative to absolute top boundary of image */
+        top: 45vh;
+        /* Push down slightly to be "below" the image */
+        margin-top: -16px;
+        /* Half of height to center on line? Or positive to be clearly below? */
+        /* Let's try placing it just overlapping or just below. 
+           Request says "below the image". 
+           Image ends at 45vh. 
+           Let's put dots at 45vh + 12px padding.
+        */
+        top: calc(45vh + 24px);
+    }
+}
+
+@media (max-width: 600px) {
+    .slide-button {
+        max-width: 100%;
+        width: 100%;
+        padding: 18px 32px;
+        font-size: 1.125rem;
+    }
+
+    .carousel-dots {
+        bottom: 10px;
+    }
+
+    .carousel-slides {
+        min-height: 80vh;
+    }
+
+    .slide-headline {
+        font-size: var(--font-size-2xl);
+    }
+
+    .slide-description {
+        font-size: var(--font-size-lg);
+    }
+}
