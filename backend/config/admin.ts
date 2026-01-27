@@ -9,6 +9,9 @@ export default ({ env }) => ({
     token: {
       salt: env('TRANSFER_TOKEN_SALT'),
     },
+    remote: {
+      enabled: true,
+    },
   },
   secrets: {
     encryptionKey: env('ENCRYPTION_KEY'),
