@@ -1,5 +1,5 @@
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || (process.env.NODE_ENV === 'production' ? 'https://nice-comfort-2b2c0f5c6c.strapiapp.com' : 'http://localhost:1337');
 
 export function getStrapiURL(path = '') {
   return `${STRAPI_URL}${path}`;
