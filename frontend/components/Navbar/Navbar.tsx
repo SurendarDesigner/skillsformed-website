@@ -114,25 +114,40 @@ const Navbar: React.FC<NavbarProps> = ({ data }) => {
 
     const toggleMobileAccordion = (index: number) => {
         const isOpen = mobileOpenIndexes.includes(index);
-        const contentRef = mobileContentRefs.current[index];
+
+        // Always close CURRENTLY open items first (if they are different from the clicked one)
+        // or if we are clicking the open one, we just close it.
+        const indexesToClose = mobileOpenIndexes.filter(i => i !== index);
+
+        indexesToClose.forEach(i => {
+            const contentRef = mobileContentRefs.current[i];
+            if (contentRef) {
+                gsap.to(contentRef, {
+                    height: 0,
+                    duration: 0.3,
+                    ease: "power2.inOut"
+                });
+            }
+        });
 
         if (isOpen) {
-            // Collapse
+            // Collapse clicked item
+            const contentRef = mobileContentRefs.current[index];
             if (contentRef) {
                 gsap.to(contentRef, {
                     height: 0,
                     duration: 0.3,
                     ease: "power2.inOut",
                     onComplete: () => {
-                        setMobileOpenIndexes(prev => prev.filter(i => i !== index));
+                        setMobileOpenIndexes([]);
                     }
                 });
             } else {
-                setMobileOpenIndexes(prev => prev.filter(i => i !== index));
+                setMobileOpenIndexes([]);
             }
         } else {
-            // Expand
-            setMobileOpenIndexes(prev => [...prev, index]);
+            // Expand new item, ensuring others are cleared from state
+            setMobileOpenIndexes([index]);
         }
     };
 

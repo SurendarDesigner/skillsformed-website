@@ -24,3 +24,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom Page Styles */
+.home-main-container {
+  padding-top: 120px;
+}
+
+@media (max-width: 1024px) {
+  .home-main-container {
+    padding-top: 96px;
+    /* Reduced for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .home-main-container {
+    padding-top: 80px;
+    /* Reduced for mobile */
+  }
+}

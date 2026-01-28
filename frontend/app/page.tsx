@@ -106,7 +106,7 @@ export default async function Home() {
   const { sliderItems, trustedSectionData } = await getHomeData();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pt-[120px]">
+    <main className="flex min-h-screen flex-col items-center justify-between home-main-container">
       <Slider items={sliderItems} />
       <Trustedsection data={trustedSectionData} />
     </main>
